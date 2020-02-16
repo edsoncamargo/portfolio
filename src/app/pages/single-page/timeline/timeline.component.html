@@ -25,23 +25,23 @@
           {{ timeline.dateEn }}
         </ng-template>
       </time>
-      <ng-container *ngIf="getLanguage() == 'pt_BR'; else elseCompanyEnglish">
-        <h3 class="timeline-headline">
+      <h3 class="timeline-headline">
+        <ng-container *ngIf="getLanguage() == 'pt_BR'; else elseCompanyEnglish">
           {{ timeline.company }}
-        </h3>
-      </ng-container>
-      <ng-template #elseCompanyEnglish>
-        {{ timeline.companyEn }}
-      </ng-template>
+        </ng-container>
+        <ng-template #elseCompanyEnglish>
+          {{ timeline.companyEn }}
+        </ng-template>
+      </h3>
       <img [src]="timeline.url | hasImage: getLanguage()" class="img-company" alt="Imagem da empresa">
-      <ng-container *ngIf="getLanguage() == 'pt_BR'; else elseDescriptionEnglish">
-        <span *ngIf="">
+      <span>
+        <ng-container *ngIf="getLanguage() == 'pt_BR'; else elseDescriptionEnglish">
           {{ timeline.description }}
-        </span>
-      </ng-container>
-      <ng-template #elseDescriptionEnglish>
-        {{ timeline.descriptionEn }}
-      </ng-template>
+        </ng-container>
+        <ng-template #elseDescriptionEnglish>
+          {{ timeline.descriptionEn }}
+        </ng-template>
+      </span>
     </li>
   </ol>
 </div>
